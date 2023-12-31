@@ -1,17 +1,17 @@
-## <b>VJ 𝘼𝙪𝙩𝙤𝘾𝙖𝙥𝙩𝙞𝙤𝙣 𝘽𝙤𝙩</b>
+## <b>𝗜𝗹𝗹𝗲𝗴𝗮𝗹 𝗔𝘂𝘁𝗼𝗖𝗮𝗽𝘁𝗶𝗼𝗻 𝗕𝗼𝘁</b>
 
-This Repo is Telegram Channel Code to help build a bot that automatically adds captions to files added to a Telegram channel Created By motech Remastered By VJ_BOTZ
+This Repo is Telegram Channel Code to help build a bot that automatically adds captions to files added to a Telegram channel Created By motech Remastered By Illegal_Developers
 
 
   </a>
 </p>
 <p align="center">
-  <a href="https://github.com/VJBots/VJ-AutoCaption-Bot/stargazers">
+  <a href="https://github.com/IllegalDeveloper/Illegal-AutoCaption-Public-Bot/stargazers">
     <img src="https://img.shields.io/github/stars/PR0FESS0R-99/AutoCaptionBot-V1?style=social">
 
   </a>
   
-  <a href="https://github.com/VJBots/VJ-AutoCaption-Bot/fork">
+  <a href="https://github.com/IllegalDeveloper/Illegal-AutoCaption-Public-Bot/fork">
     <img src="https://img.shields.io/github/forks/PR0FESS0R-99/AutoCaptionBot-V1?label=Fork&style=social">
 
   </a>  
@@ -19,7 +19,7 @@ This Repo is Telegram Channel Code to help build a bot that automatically adds c
 
 
 ### Deploy To Heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/VJBots/VJ-AutoCaption-Bot)  
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/IllegalDeveloper/Illegal-AutoCaption-Public-Bot)  
 
 ### Deploy To Render 
 
@@ -47,7 +47,7 @@ Use these settings when adding a monitor:</b>
 <b>Click on the below button to deploy directly to render ↓</b>
 <br>
 <br>
-<a href="https://render.com/deploy?repo=https://github.com/VJBots/VJ-AutoCaption-Bot/tree/main">
+<a href="https://render.com/deploy?repo=https://github.com/IllegalDeveloper/Illegal-AutoCaption-Public-Bot/tree/main">
 <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render">
 </a>
 </details>
@@ -57,7 +57,7 @@ Use these settings when adding a monitor:</b>
 * `app_id` : Get this value from [telegram.org](https://my.telegram.org/apps).
 * `api_hash` : Get this value from [telegram.org](https://my.telegram.org/apps) .
 * `bot_token` : Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token .
-* `custom_caption` : your caption. add {file_name} to get file original name. More info to watch [YT TUTORIAL](https://youtube.com/@Tech_VJ) .
+* `custom_caption` : your caption. add {file_name} to get file original name. More info to watch [YT TUTORIAL](https://youtube.com/) .
 
 ### Made With 
 
@@ -72,14 +72,14 @@ Use these settings when adding a monitor:</b>
 
 ### Developer & Support
 
-[Telegram Channel](https://Telegram.dog/VJ_Botz)
+[Telegram Channel](https://Telegram.dog/Illegal_Developer)
 
-[Follow On InstaGram](https://www.instagram.com/tech.vj)
+[Follow On InstaGram](https://www.instagram.com/Illegal_Developer)
 
-[Subscribe YouTube Channel](https://youtube.com/@Tech_VJ)
+[Subscribe YouTube Channel](https://youtube.com/)
 
 ### Credits
-[Tech VJ](https://youtube.com/@Tech_VJ) - Make Repo Deployable On Web Platform. 
+[Tech VJ](https://youtube.com/) - Make Repo Deployable On Web Platform. 
 
 Mo-Tech & PR0FESS0R-99 - For Repo
 
