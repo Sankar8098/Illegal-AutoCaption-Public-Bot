@@ -129,3 +129,51 @@ async def process_file_caption(bot, update):
 def get_file_details(update: pyrogram.types.Message):
     if update.media:
         for message
+
+# ... (your existing code)
+
+# Get file details function (continued)
+def get_file_details(update: pyrogram.types.Message):
+    if update.media:
+        for message_type in (
+            "photo",
+            "animation",
+            "audio",
+            "document",
+            "video",
+            "video_note",
+            "voice",
+            "sticker"
+        ):
+            obj = getattr(update, message_type)
+            if obj:
+                return obj, obj.file_id
+
+# Start buttons function
+def start_buttons(bot, update):
+    bot = bot.get_me()
+    buttons = [
+        [
+            pyrogram.types.InlineKeyboardButton("Updates", url="https://t.me/Illegal_Developer"),
+            pyrogram.types.InlineKeyboardButton("About 🤠", callback_data="about")
+        ],
+        [
+            pyrogram.types.InlineKeyboardButton("➕️ Add To Your Channel ➕️", url=f"http://t.me/{bot.username}?startchannel=true")
+        ]
+    ]
+    return pyrogram.types.InlineKeyboardMarkup(buttons)
+
+# About buttons function
+def about_buttons(bot, update):
+    buttons = [
+        [
+            pyrogram.types.InlineKeyboardButton("🏠 Back To Home 🏠", callback_data="start")
+        ]
+    ]
+    return pyrogram.types.InlineKeyboardMarkup(buttons)
+
+print("Telegram AutoCaption V1 Bot Start")
+print("Bot Created By https://t.me/Illegal_Developer")
+
+AutoCaptionBotV1.run()
+
