@@ -138,11 +138,6 @@ async def edit_caption(update, file_name):
 
 # ... (your existing code)
 
-# Continue with the rest of your code
-
-
-## ... (your existing code)
-
 # Get file details function (continued)
 def get_file_details(update: pyrogram.types.Message):
     if update.media:
