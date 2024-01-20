@@ -78,7 +78,7 @@ def get_file_details(update: pyrogram.types.Message):
             if obj:
                 return obj, obj.file_id
 
-# ... (your existing code)
+# ... # ... (your existing code)
 
 @AutoCaptionBotV1.on_message(pyrogram.filters.channel)
 async def process_file_caption(bot, update):
