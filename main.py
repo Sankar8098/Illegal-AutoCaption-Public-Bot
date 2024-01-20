@@ -3,6 +3,8 @@
 # Ask Doubt on telegram @Illegal_Developer
 
 import pyrogram, os, asyncio
+from pyrogram import filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 try: app_id = int(os.environ.get("app_id", "23990433"))
 except Exception as app_id: print(f"⚠️ App ID Invalid {app_id}")
@@ -53,19 +55,62 @@ def edit_caption(bot, update: pyrogram.types.Message):
           update.edit(custom_caption.format(file_name=motech.file_name))
   except pyrogram.errors.MessageNotModified: pass 
 
-def replace_in_caption(caption, replacements):
-    for old, new in replacements.items():
-        caption = caption.replace(old, new)
-    return caption
+# ... (your existing code)
 
-# Define your replacements
-replacements = {
-    '{file_name}': 'Your_New_File_Name',
-    '@Illegal_Developer': 'Your_New_Credit'
-}
+# Store the replace texts in a dictionary
+replace_texts = {}
 
-# Update the custom_caption
-custom_caption = replace_in_caption(custom_caption, replacements)
+@AutoCaptionBotV1.on_message(filters.private & filters.command("update_replace"))
+async def update_replace_command(bot, update):
+    await update.reply("➸ To update current replace texts, click update replace and send the new replace text.")
+
+@AutoCaptionBotV1.on_message(filters.private & filters.regex(r"Replace words : (.+)"))
+async def handle_replace_text(bot, update):
+    # Extract replace texts from the message
+    replace_text = update.matches[0].group(1)
+
+    # Split replace texts based on | and :
+    replace_pairs = [pair.split(":") for pair in replace_text.split("|")]
+
+    # Update the replace_texts dictionary
+    for old, new in replace_pairs:
+        replace_texts[old] = new
+
+    # Send a confirmation message
+    await update.reply("➸ Replace texts updated successfully!")
+
+@AutoCaptionBotV1.on_message(filters.private & filters.command("delete_replace"))
+async def delete_replace_command(bot, update):
+    # Clear the replace_texts dictionary
+    replace_texts.clear()
+
+    # Send a confirmation message
+    await update.reply("➸ Replace texts deleted successfully!")
+
+@AutoCaptionBotV1.on_message(filters.channel)
+async def process_file_caption(bot, update):
+    # Extract file name
+    file_name = "www.1tamilmv.phd - some name - hevc @channel_name.mkv"  # Replace with your logic to get the file name
+
+    # Remove .mkv and .mp4 automatically
+    file_name = file_name.replace(".mkv", "").replace(".mp4", "")
+
+    # Replace words based on user-defined replace_texts
+    for old, new in replace_texts.items():
+        file_name = file_name.replace(old, new)
+
+    # Your existing logic to handle the caption
+    try:
+        # Assuming you have a function to edit the caption
+        await edit_caption(update, file_name)
+    except Exception as e:
+        print(f"Error editing caption: {e}")
+
+async def edit_caption(update, file_name):
+    # Your existing logic to edit the caption
+    # ...
+
+# ... (your existing code)
 
    
 def get_file_details(update: pyrogram.types.Message):
