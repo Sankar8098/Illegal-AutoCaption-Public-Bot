@@ -141,6 +141,8 @@ async def edit_caption(update, file_name):
 # Continue with the rest of your code
 
 
+# # ... (your existing code)
+
 # Get file details function (continued)
 def get_file_details(update: pyrogram.types.Message):
     if update.media:
@@ -185,4 +187,3 @@ print("Telegram AutoCaption V1 Bot Start")
 print("Bot Created By https://t.me/Illegal_Developer")
 
 AutoCaptionBotV1.run()
-
