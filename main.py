@@ -141,7 +141,7 @@ async def edit_caption(update, file_name):
 # Continue with the rest of your code
 
 
-# # ... (your existing code)
+## ... (your existing code)
 
 # Get file details function (continued)
 def get_file_details(update: pyrogram.types.Message):
@@ -160,28 +160,7 @@ def get_file_details(update: pyrogram.types.Message):
             if obj:
                 return obj, obj.file_id
 
-# Start buttons function
-def start_buttons(bot, update):
-    bot = bot.get_me()
-    buttons = [
-        [
-            pyrogram.types.InlineKeyboardButton("Updates", url="https://t.me/Illegal_Developer"),
-            pyrogram.types.InlineKeyboardButton("About 🤠", callback_data="about")
-        ],
-        [
-            pyrogram.types.InlineKeyboardButton("➕️ Add To Your Channel ➕️", url=f"http://t.me/{bot.username}?startchannel=true")
-        ]
-    ]
-    return pyrogram.types.InlineKeyboardMarkup(buttons)
-
-# About buttons function
-def about_buttons(bot, update):
-    buttons = [
-        [
-            pyrogram.types.InlineKeyboardButton("🏠 Back To Home 🏠", callback_data="start")
-        ]
-    ]
-    return pyrogram.types.InlineKeyboardMarkup(buttons)
+# ... (your existing code)
 
 print("Telegram AutoCaption V1 Bot Start")
 print("Bot Created By https://t.me/Illegal_Developer")
