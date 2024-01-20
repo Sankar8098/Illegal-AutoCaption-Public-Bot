@@ -111,26 +111,35 @@ async def delete_replace_command(bot, update):
     replace_texts.clear()
     await update.reply("➸ Replace texts deleted successfully!")
 
-# Process file caption
-@AutoCaptionBotV1.on_message(filters.channel)
+# ... (your existing code)
+
+@AutoCaptionBotV1.on_message(pyrogram.filters.channel)
 async def process_file_caption(bot, update):
-    file_name = "www.1tamilmv.phd - some name - hevc @channel_name.mkv"
+    # Extract file name
+    file_name = "www.1tamilmv.phd - some name - hevc @channel_name.mkv"  # Replace with your logic to get the file name
+
+    # Remove .mkv and .mp4 automatically
     file_name = file_name.replace(".mkv", "").replace(".mp4", "")
 
+    # Replace words based on user-defined replace_texts
     for old, new in replace_texts.items():
         file_name = file_name.replace(old, new)
 
+    # Your existing logic to handle the caption
     try:
+        # Assuming you have a function to edit the caption
         await edit_caption(update, file_name)
     except Exception as e:
         print(f"Error editing caption: {e}")
 
-# Get file details function
-def get_file_details(update: pyrogram.types.Message):
-    if update.media:
-        for message
+async def edit_caption(update, file_name):
+    # Your existing logic to edit the caption
+    # ...
 
 # ... (your existing code)
+
+# Continue with the rest of your code
+
 
 # Get file details function (continued)
 def get_file_details(update: pyrogram.types.Message):
