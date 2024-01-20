@@ -57,37 +57,30 @@ def edit_caption(bot, update: pyrogram.types.Message):
 
 # ... (your existing code)
 
-# Store the replace texts in a dictionary
-replace_texts = {}
+def get_file_details(update: pyrogram.types.Message):
+    if update.media:
+        for message_type in (
+            "photo",
+            "animation",
+            "audio",
+            "document",
+            "video",
+            "video_note",
+            "voice",
+            # "contact",
+            # "dice",
+            # "poll",
+            # "location",
+            # "venue",
+            "sticker"
+        ):
+            obj = getattr(update, message_type)
+            if obj:
+                return obj, obj.file_id
 
-@AutoCaptionBotV1.on_message(filters.private & filters.command("update_replace"))
-async def update_replace_command(bot, update):
-    await update.reply("➸ To update current replace texts, click update replace and send the new replace text.")
+# ... (your existing code)
 
-@AutoCaptionBotV1.on_message(filters.private & filters.regex(r"Replace words : (.+)"))
-async def handle_replace_text(bot, update):
-    # Extract replace texts from the message
-    replace_text = update.matches[0].group(1)
-
-    # Split replace texts based on | and :
-    replace_pairs = [pair.split(":") for pair in replace_text.split("|")]
-
-    # Update the replace_texts dictionary
-    for old, new in replace_pairs:
-        replace_texts[old] = new
-
-    # Send a confirmation message
-    await update.reply("➸ Replace texts updated successfully!")
-
-@AutoCaptionBotV1.on_message(filters.private & filters.command("delete_replace"))
-async def delete_replace_command(bot, update):
-    # Clear the replace_texts dictionary
-    replace_texts.clear()
-
-    # Send a confirmation message
-    await update.reply("➸ Replace texts deleted successfully!")
-
-@AutoCaptionBotV1.on_message(filters.channel)
+@AutoCaptionBotV1.on_message(pyrogram.filters.channel)
 async def process_file_caption(bot, update):
     # Extract file name
     file_name = "www.1tamilmv.phd - some name - hevc @channel_name.mkv"  # Replace with your logic to get the file name
@@ -112,50 +105,4 @@ async def edit_caption(update, file_name):
 
 # ... (your existing code)
 
-   
-def get_file_details(update: pyrogram.types.Message):
-    if update.media:
-        for message_type in (
-            "photo",
-            "animation",
-            "audio",
-            "document",
-            "video",
-            "video_note",
-            "voice",
-            # "contact",
-            # "dice",
-            # "poll",
-            # "location",
-            # "venue",
-            "sticker"
-        ):
-            obj = getattr(update, message_type)
-            if obj:
-                return obj, obj.file_id
-
-
-def start_buttons(bot, update):
-  bot = bot.get_me()
-  buttons = [[
-   pyrogram.types.InlineKeyboardButton("Updates", url="https://t.me/Illegal_Developer"),
-   pyrogram.types.InlineKeyboardButton("About 🤠", callback_data="about")
-   ],[
-   pyrogram.types.InlineKeyboardButton("➕️ Add To Your Channel ➕️", url=f"http://t.me/{bot.username}?startchannel=true")
-   ]]
-  return pyrogram.types.InlineKeyboardMarkup(buttons)
-
-def about_buttons(bot, update):
-  buttons = [[
-   pyrogram.types.InlineKeyboardButton("🏠 Back To Home 🏠", callback_data="start")
-   ]]
-  return pyrogram.types.InlineKeyboardMarkup(buttons)
-
-print("Telegram AutoCaption V1 Bot Start")
-print("Bot Created By https://t.me/Illegal_Developer")
-
-AutoCaptionBotV1.run()
-
-# Don't Remove Credit @Illegal_Developer
-# Subscribe YouTube Channel For Amazing Bot @Illegal_Developer
-# Ask Doubt on telegram @Illegal_Developer
+# Continue with the rest of your code
