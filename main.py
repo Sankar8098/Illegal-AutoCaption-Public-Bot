@@ -52,7 +52,22 @@ def edit_caption(bot, update: pyrogram.types.Message):
           asyncio.sleep(FloodWait.value)
           update.edit(custom_caption.format(file_name=motech.file_name))
   except pyrogram.errors.MessageNotModified: pass 
-    
+
+def replace_in_caption(caption, replacements):
+    for old, new in replacements.items():
+        caption = caption.replace(old, new)
+    return caption
+
+# Define your replacements
+replacements = {
+    '{file_name}': 'Your_New_File_Name',
+    '@Illegal_Developer': 'Your_New_Credit'
+}
+
+# Update the custom_caption
+custom_caption = replace_in_caption(custom_caption, replacements)
+
+   
 def get_file_details(update: pyrogram.types.Message):
   if update.media:
     for message_type in (
